@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>토트넘 핫스퍼</title>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      var titleButton = document.querySelector('.title .btn');
+      var navMenu = document.querySelector('#nav .nav');
+      
+      titleButton.addEventListener('click', function() {
+        navMenu.classList.toggle('active');
+      });
+
+      var slideIndex = 0;
+      showSlides();
+
+      function showSlides() {
+        var i;
+        var slides = document.getElementsByClassName("mySlidesfade");
+        var dots = document.getElementsByClassName("dot");
+        for (i = 0; i < slides.length; i++) {
+          slides[i].style.display = "none";  
+        }
+        slideIndex++;
+        if (slideIndex > slides.length) {slideIndex = 1}    
+        for (i = 0; i < dots.length; i++) {
+          dots[i].className = dots[i].className.replace(" active", "");
+        }
+        slides[slideIndex-1].style.display = "block";  
+        dots[slideIndex-1].className += " active";
+        setTimeout(showSlides, 5000); // 2초마다 이미지 변경
+      }
+    });
+    
+  </script>
+  <link rel="stylesheet" href="style.css">
+  <link rel="js" href="index.js">
+  <!-- 폰트 -->
+  <link href="https://fonts.googleapis.com/css2?family=Abel&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Nanum+Gothic" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Nanum+Brush+Script" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Abel&display=swap" rel="stylesheet">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css">
+</head>
+<body>
+  <header id="header">
+    <div class="container">
+      <div class="header">
+        <div class="header_menu">
+          <a href="index.html">home</a>
+          <a href="#">뉴스</a>
+          <a href="#">팀</a>
+          <a href="#">티켓</a>
+          <a href="#">상점</a>
+        </div>
+        <div class="header_tit">
+          <h1>토트넘 핫스퍼</h1>
+          <a href="#">커뮤니티</a>
+        </div>
+      </div>
+    </div>
+  </header>
+  
+  <nav id="nav">
+    <div class="container">
+      <div class="nav">
+        <div>
+          <h3>퍼스트 팀</h3>
+          <ol>
+            <li><a href="#">선수</a></li>
+            <li><a href="#">일정</a></li>
+            <li><a href="#">결과</a></li>
+            <li><a href="#">통계</a></li>
+          </ol>
+        </div>
+        <div>
+          <h3>아카데미</h3>
+          <ol>
+            <li><a href="#">선수</a></li>
+            <li><a href="#">일정</a></li>
+            <li><a href="#">결과</a></li>
+            <li><a href="#">개발</a></li>
+          </ol>
+        </div>
+        <div>
+          <h3>클럽</h3>
+          <ol>
+            <li><a href="#">역사</a></li>
+            <li><a href="#">경기장</a></li>
+            <li><a href="#">재단</a></li>
+            <li><a href="#">커뮤니티</a></li>
+          </ol>
+        </div>
+        <div class="last">
+          <h3>더보기</h3>
+          <ol>
+            <li><a href="#">티켓</a></li>
+            <li><a href="#">상점</a></li>
+            <li><a href="#">지원</a></li>
+          </ol>
+        </div>
+      </div>
+    </div>
+  </nav>
+  
+  <article id="title">
+    <div class="container">
+      <div class="title">
+        <h2>토트넘 핫스퍼에 오신 것을 환영합니다</h2>
+        <a href="#" class="btn">
+          <i class="fa fa-angle-down" aria-hidden="true"></i>
+          <span class="ir_su">더 알아보기</span>
+        </a>
+      </div>
+    </div>
+  </article>
+  
+  <main>
+    <div class="container">
+      <section id="contents">
+        <h2 class="ir_su">주요 콘텐츠</h2>
+        <section id="cont_left" style="height: 3500px;" >
+          <article class="column col1">
+            <h4 class="col_tit">축구 베스트 게시물</h4>
+            <p class="col_desc">최신 뉴스와 이벤트를 업데이트하세요.</p>
+            <div class="news">
+              <ul>
+                <li><a href="#">뉴스 기사 제목</a></li>
+                <li><a href="#">뉴스 기사 제목</a></li>
+                <li><a href="#">뉴스 기사 제목</a></li>
+                <li><a href="#">뉴스 기사 제목</a></li>
+              </ul>
+            </div>
+          </article>
+          <article class="column col2">
+            <h4 class="col_tit">라커룸 베스트 게시물</h4>
+            <p class="col_desc">다가오는 경기 일정을 확인하세요.</p>
+            <div class="fixtures">
+              <ul>
+                <li><a href="#">경기 일정 상세 정보</a></li>
+                <li><a href="#">경기 일정 상세 정보</a></li>
+                <li><a href="#">경기 일정 상세 정보</a></li>
+                <li><a href="#">경기 일정 상세 정보</a></li><br><br><br>
+              </ul>
+            </div>
+            <div class="guestbook">
+              <h4>방명록</h4>
+              <form id="guestbookForm">
+                <label for="name">이름:</label>
+                <input type="text" id="name" name="name" required>
+                <br>
+                <label for="message">내용:</label>
+                <textarea id="message" name="message" rows="4" required></textarea>
+                <br>
+                <button type="submit">제출</button>
+              </form>
+              <ul id="guestbookEntries">
+                <!-- 방명록 항목이 여기에 추가될 것입니다 -->
+              </ul>
+            </div>
+          </article>
+        </section>
+        <section>
+          <article class="column col7">
+            <h4 class="col_tit">Tottenham Hotspur 경기 일정</h4>
+            <div id="fixturesList" style="height: 300px; float: right; width: 76.2%;">
+                <!-- 경기 일정이 여기에 동적으로 추가될 것입니다 -->
+            </div>
+        </article>
+        </section>
+        
+    </div>
+  </main>
+  
+  <footer id="footer" style="float: left;width: 100%;">
+    <div class="container">
+      <h2>토트넘 핫스퍼에 문의하기</h2>
+      <p>주소: 영국 런던 토트넘 레인 123</p>
+      <p>전화: +44 123 456 7890 | 이메일: info@tottenhamhotspur.com</p>
+    </div>
+  </footer>
+  <script>
+    // 방명록 폼 참조
+const guestbookForm = document.getElementById('guestbookForm');
+// 방명록 목록 참조
+const guestbookEntries = document.getElementById('guestbookEntries');
+
+// 방명록 폼 제출 이벤트 처리
+guestbookForm.addEventListener('submit', function(event) {
+  event.preventDefault(); // 기본 제출 동작 방지
+
+  // 입력된 이름과 메시지 가져오기
+  const name = document.getElementById('name').value;
+  const message = document.getElementById('message').value;
+
+  // 새로운 방명록 항목 생성
+  const li = document.createElement('li');
+  li.innerHTML = `<strong>${name}</strong>: ${message}`;
+
+  // 목록에 추가
+  guestbookEntries.appendChild(li);
+
+  // 폼 초기화
+  guestbookForm.reset();
+});
+document.addEventListener('DOMContentLoaded', async function() {
+    try {
+        const response = await fetch('http://localhost:3000/tottenham-fixtures');
+
+        if (!response.ok) {
+            throw new Error('Failed to fetch fixtures');
+        }
+
+        const data = await response.json();
+
+        const fixturesList = document.getElementById('fixturesList');
+        fixturesList.innerHTML = ''; // Clear previous content
+
+        if (!Array.isArray(data)) {
+            throw new Error('Expected an array of fixtures, but received something else.');
+        }
+
+        data.forEach(fixture => {
+            const fixtureItem = document.createElement('div');
+            fixtureItem.classList.add('fixture-item');
+            fixtureItem.innerHTML = `
+                <p>${fixture.homeTeam.name} vs ${fixture.awayTeam.name}</p>
+                <p>일시: ${fixture.utcDate}</p>
+            `;
+            fixturesList.appendChild(fixtureItem);
+        });
+    } catch (error) {
+        console.error('Error fetching fixtures:', error);
+        // Handle error - show message to user, retry fetch, etc.
+    }
+});
+
+  </script>
+</body>
+</html>
